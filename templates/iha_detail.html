@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} {{detail.iha_name}} Detayları {% endblock %}
+
+{% block body %}
+
+{% block search %}
+{% endblock %}
+
+
+
+<div class ='col-sm-6 col-sm-offset-3'>
+  <div class="list-group-item active">
+    <strong><span class="glyphicon glyphicon-film"></span> İha Detayları</strong>
+  </div>
+  {% if detail.image %}
+  <img src='{{ detail.image.url }}' class="img-responsive"/>
+  {% endif %}
+  <a href="" class="list-group-item"><strong>İha Adı: </strong>{{detail.iha_name}}</a>
+  <a href="" class="list-group-item"><strong>İha Ağırlığı: </strong>{{detail.iha_weight}}</a>
+  <a href="" class="list-group-item"><strong>Firma Adı Name   : </strong>{{detail.company_name}}</a>
+  <a href="" class="list-group-item"><strong>Beğeni Sayısı   : </strong>{{detail.like}}</a>
+  <a href="" class="list-group-item"><strong>Diğer Bilgiler   : </strong>{{detail.content}}</a><br>
+  <div class="pull-right">
+    <a href="{% url 'new_iha' %}"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-list"></span> Yeni Eklenen İha'lar</button></a>
+    <a href="{% url 'order_create' %}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Kirala</button></a>
+    
+<hr>
+  </div>
+
+</div>
+
+{% endblock %}
