@@ -14,7 +14,7 @@ services:
       - DB_HOST=db
       - DB_NAME=ihaKiralamaDB
       - DB_USER=postgres
-      - DB_PASS=2Z7b9qluik*
+      - DB_PASS=POSTGRES_SIFRENIZ
 
     depends_on:
       - db
