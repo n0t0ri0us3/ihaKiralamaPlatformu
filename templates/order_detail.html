@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Sipariş Detayları {% endblock %}
+
+{% block body %}
+
+
+<div class ='col-sm-6 col-sm-offset-3'>
+  <strong><p style="color: red">Kiralama işleminiz başarıyla gerçekleştirildi. İşleminize ait detaylar aşağıda verilmiştir.
+  </p></strong>
+  <p class="list-group-item active">
+    <strong><span class="glyphicon glyphicon-tag"></span> Kiralama Detayları</strong>
+  </p>
+   <a href="" class="list-group-item"><strong>İha Adı: </strong>{{detail.iha_name}}</a>
+  <a href="" class="list-group-item"><strong>Çalışan Adı: </strong>{{detail.employee_name}}</a>
+  <a href="" class="list-group-item"><strong>Telefon Numarası: </strong>{{detail.cell_no}}</a>
+  <a href="" class="list-group-item"><strong>Adres: </strong>{{detail.address}}</a>
+  <a href="" class="list-group-item"><strong>Kimden: </strong>{{detail.date}}</a>
+  <a href="" class="list-group-item"><strong>Kime: </strong>{{detail.to}}</a>
+  <a href="" class="list-group-item"><strong>Sipariş Id: </strong>{{detail.id}}</a><br>
+  <div class="pull-right">
+    <a href="{% url 'order_edit' detail.id %}"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Siparişi Düzenle</button></a>
+    <a href="{% url 'order_delete' detail.id %}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span> Siparişi İptal Et</button></a>
+    <a href=""><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Çıktı Al</button></a>
+
+  </div>
+</div>
+
+{% endblock %}
